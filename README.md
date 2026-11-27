@@ -2,7 +2,12 @@
 
 Lab độc lập khảo sát và phân tích khám phá **AIT Log Data Set v2.1**, chỉ sử dụng tám archive `*_no-pcaps.zip`. Lab tập trung vào nguồn gốc, cấu trúc, chất lượng, thời gian, nhãn và mức độ dữ liệu hỗ trợ nghiên cứu hành vi tài khoản trong bối cảnh bài tập lớn **Account Behavior Security Gateway (ABSG)**.
 
-> **Trạng thái:** đang tìm hiểu và đặc tả lab. Quy trình triển khai chi tiết và cấu trúc thư mục đích chưa được chốt. Chưa tải dữ liệu, chưa chạy Survey/EDA và chưa có số liệu thực đo.
+**Đã nghiệm thu ngày 26/11/2026.** Tám archive no-pcaps có 261.402.985 dòng văn bản theo bộ kiểm kê và 2.096.892 dòng có annotation. Toàn bộ tham chiếu nhãn hợp lệ theo file và số dòng. Phạm vi quan sát tài khoản và giới hạn về thời gian được nêu trong báo cáo.
+
+- [Báo cáo Survey](docs/survey_report.md)
+- [Báo cáo EDA](docs/eda_report.md)
+- [Notebook đã chạy](notebooks/ait_lds_eda.ipynb)
+- [Nghiệm thu, hướng dẫn tái lập và demo](docs/final_acceptance.md)
 
 ## Mục lục
 
@@ -15,6 +20,7 @@ Lab độc lập khảo sát và phân tích khám phá **AIT Log Data Set v2.1*
 - [Nguyên tắc thực hiện](#nguyên-tắc-thực-hiện)
 - [Trạng thái và nội dung còn mở](#trạng-thái-và-nội-dung-còn-mở)
 - [Tài liệu tham khảo trong workspace](#tài-liệu-tham-khảo-trong-workspace)
+- [Bản đồ tài liệu](#bản-đồ-tài-liệu)
 - [Repository](#repository)
 
 ## Mục tiêu
@@ -127,7 +133,7 @@ Thông tin tài liệu không nêu được ghi là `Không rõ`; dữ liệu kh
 5. **Manifest và Data Quality Log**: lưu phiên bản dữ liệu, checksum, số đếm, lỗi và mọi quyết định xử lý.
 6. **Hình, bảng, log chạy và test**: bằng chứng hỗ trợ nghiệm thu và tái lập.
 
-Tên file, các bước triển khai và vị trí chính xác của các artifact sẽ được chốt sau. Danh sách trên mô tả loại đầu ra, chưa phải cấu trúc thư mục cuối cùng.
+Đường dẫn đầu ra đã nghiệm thu nằm ở đầu README.
 
 ## Nguyên tắc thực hiện
 
@@ -143,17 +149,7 @@ Tên file, các bước triển khai và vị trí chính xác của các artifa
 
 ## Trạng thái và nội dung còn mở
 
-Lab hiện ở giai đoạn tìm hiểu và chuẩn bị. Những nội dung sau **chưa được chốt**:
-
-- Các giai đoạn và thứ tự triển khai chi tiết.
-- Cấu trúc thư mục đích.
-- Bộ thư viện và môi trường chạy.
-- Thiết kế manifest, schema trung gian và cache.
-- Bộ đọc cần hỗ trợ cho từng loại log.
-- Danh sách biểu đồ và bảng cuối cùng.
-- Tiêu chí nghiệm thu chi tiết cho từng phần.
-
-Cho tới khi các nội dung này được duyệt, tài liệu hoặc cây thư mục được đề xuất chỉ được xem là bản nháp thiết kế.
+M1–M8 đã hoàn tất. Các điểm còn mở về ngữ nghĩa nhãn, thời gian và khả năng nối tài khoản được ghi trong [biên bản nghiệm thu](docs/final_acceptance.md). Bảng chi tiết theo file và manifest của run lưu cục bộ dưới `outputs/`.
 
 ## Tài liệu tham khảo trong workspace
 
@@ -167,6 +163,21 @@ Thư mục `reference/` chứa bản sao tham khảo tại thời điểm chuẩ
 | Quy trình, thiết kế và nghiệm thu Lab 2 | `reference/lab2/` |
 
 Các bản sao này không thay thế nguồn gốc. Khi sử dụng trong kết luận, cần đối chiếu bản hiện hành hoặc nguồn chính thức tương ứng.
+
+## Bản đồ tài liệu
+
+| Tài liệu | Vai trò |
+|---|---|
+| [Project Define](docs/project_define.md) | Bài toán, người dùng, đầu vào, đầu ra và tiêu chí đánh giá. |
+| [Project Design](docs/project_design.md) | Kiến trúc, module, cấu trúc thư mục và thiết kế kiểm tra. |
+| [AI Usage](docs/AI_usage.md) | Công việc AI hỗ trợ, đóng góp sinh viên và cách kiểm chứng. |
+| [Dàn ý hai báo cáo](docs/report_outlines.md) | Đề xuất 11 nhóm Survey, 18 bước EDA và cách cập nhật bằng chứng. |
+| [Milestone cho AI agent](docs/milestones.md) | Công việc, phụ thuộc, đầu ra và tiêu chí nghiệm thu từng mốc. |
+| [Hai form và nguồn bản sao](reference/forms/README.md) | Form Survey/EDA được sao chép từ Downloads, có SHA-256 đối chiếu. |
+| [Bối cảnh HKDN](reference/hkdn/) | Nhiệm vụ, contract, privacy, nhãn và mapping tham khảo. |
+| [Quy trình Lab 2](reference/lab2/) | Thiết kế, quy trình phát triển và nghiệm thu tham khảo. |
+
+Các bản sao trong `reference/` được lưu cục bộ và đang nằm trong quy tắc loại khỏi Git. Khi clone repo cần chuẩn bị các nguồn tham khảo tương ứng. Hai báo cáo kết quả nằm trong docs/.
 
 ## Repository
 

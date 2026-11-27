@@ -1,0 +1,11 @@
+/reference/
+/data/
+/outputs/
+/tmp/
+*.zip
+*.pcap
+*.pcapng
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.env
